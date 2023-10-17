@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_template_apk/constants.dart';
+import 'package:quiz_template_apk/screens/quiz_screen.dart';
+import 'package:quiz_template_apk/widgets/quiz_card.dart';
 import 'package:quiz_template_apk/widgets/rewardCard_widget.dart';
 import 'package:quiz_template_apk/widgets/userInfo_widget.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -96,33 +98,20 @@ class HomeScreen extends StatelessWidget {
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
                     Map<String, dynamic> itemData = data[index];
-                    return Card(
-                      elevation: 2,
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          children: [
-                            Image.asset(itemData['image'], width: 90),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(itemData['name'],
-                                style: TextStyle(
-                                    color: Constants().textGrasColor,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold)),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text("${itemData['questions']} Questions",
-                                style: TextStyle(
-                                    color: Constants().textGrasColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                      ),
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => QuizScreen(
+                                    quizName: itemData['name'],
+                                    quizNumber:
+                                        itemData['questions'].toString()))));
+                      },
+                      child: QuizCard(
+                          imageUrl: itemData['image'],
+                          name: itemData['name'],
+                          nbrQuestion: itemData['questions'].toString()),
                     );
                   },
                 ),
