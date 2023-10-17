@@ -1,16 +1,17 @@
 # quiz_template_apk
 
-A new Flutter project.
+clone le projet:
 
-## Getting Started
+      git clone https://github.com/banarin/quiz_template_apk.git
 
-This project is a starting point for a Flutter application.
+Installer toutes les dependances :
 
-A few resources to get you started if this is your first Flutter project:
+    flutter pub get
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Lancer le projet :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    flutter run
+
+# HomeScreen
+
+![WhatsApp Image 2023-10-17 à 01 02 00_49db5a91](https://github.com/banarin/quiz_template_apk/assets/92242447/8db8d56f-a416-49c8-9de7-da12dcd07522)
